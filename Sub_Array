@@ -1,0 +1,45 @@
+public class SubArray 
+{
+	public static void main(String[] args) 
+	{
+	int	arr[] = {1,4};//{1, 4, 0, 0, 3, 10, 5};//{ 15, 2, 4, 8, 9, 5, 10, 23};
+	int sum=28;
+	int ind=0;
+	int last=0;
+	if(sum==0)
+	{
+		System.out.println(-1);
+	}else {
+	for(int i=0;i<arr.length;i++)
+	{
+		int temp=0;
+		ind=i;
+		for(int j=i;j<arr.length;j++)
+		{
+			 if(temp<=sum)
+			{
+				temp=temp+arr[j];
+				if(temp==sum)
+				{
+					last=j;
+					break;
+				}
+			} 
+			else if(temp>sum)       //   15, 2, 4, 8, 9, 5, 10, 23
+			{
+				break;
+			}	
+		}
+		if(temp==sum)
+		{
+			break;
+		}
+	}
+	if(ind==last )
+	{
+		System.out.println(ind);
+	}else {
+	System.out.println(ind+1 + " "+(last+1));
+	}	
+	}
+}}
