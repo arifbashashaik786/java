@@ -1,0 +1,25 @@
+public class P1 
+{
+	public static void main(String[] args) 
+	{
+	String s="arif&&%$#@!basha";
+	StringBuffer res=new StringBuffer();
+	int ind=0;
+	for(int i=s.length()-1;i>=0;i--)
+	{
+		char ch=s.charAt(i);
+		if(Character.isAlphabetic(ch))
+		{
+			ind+=1;
+			res.append(ch);
+		}
+		else 
+		{
+			res.insert(ind,ch);
+			
+		}		
+	}
+	System.out.println(res);	
+	}
+
+}
